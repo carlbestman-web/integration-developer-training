@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive Java to Mule and DataWeave healthcare integration training lab">
+  <title>Healthcare Integration Coding Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">HI</span>
+      <div>
+        <strong>Healthcare Integration Coding Lab</strong>
+        <span>Java → Mule → DataWeave</span>
+      </div>
+    </div>
+    <div class="progress-wrap" aria-label="Course progress">
+      <span id="progressText">0 / 6 completed</span>
+      <div class="progress-track"><div id="progressBar"></div></div>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-title">LESSONS</div>
+      <nav id="lessonNav" aria-label="Training lessons"></nav>
+      <div class="sidebar-note">
+        <strong>Training rule</strong>
+        <p>Understand it in Java first. Then translate routing to Mule XML and data logic to DataWeave.</p>
+      </div>
+    </aside>
+
+    <main class="content">
+      <section class="lesson-header">
+        <div>
+          <p id="lessonStage" class="eyebrow"></p>
+          <h1 id="lessonTitle"></h1>
+          <p id="lessonObjective" class="lead"></p>
+        </div>
+        <span id="lessonBadge" class="badge"></span>
+      </section>
+
+      <section class="concept-card">
+        <h2>Requirement</h2>
+        <p id="requirement"></p>
+        <div id="testData" class="test-data"></div>
+      </section>
+
+      <section class="workspace-grid">
+        <article class="editor-card">
+          <div class="editor-head">
+            <div>
+              <span class="step-number">1</span>
+              <h2>Spring Boot / Java</h2>
+            </div>
+            <button id="resetJava" class="button secondary">Reset</button>
+          </div>
+          <p class="hint-line" id="javaHint"></p>
+          <textarea id="javaEditor" class="code-editor" spellcheck="false" aria-label="Java solution editor"></textarea>
+          <div class="actions">
+            <button id="runJava" class="button primary">Run Java Logic</button>
+            <button id="showJava" class="button ghost">Show Solution</button>
+          </div>
+          <div id="javaResult" class="result" aria-live="polite"></div>
+        </article>
+
+        <article class="editor-card">
+          <div class="editor-head">
+            <div>
+              <span class="step-number">2</span>
+              <h2>Mule / DataWeave</h2>
+            </div>
+            <button id="resetMule" class="button secondary">Reset</button>
+          </div>
+          <p class="hint-line" id="muleHint"></p>
+          <textarea id="muleEditor" class="code-editor" spellcheck="false" aria-label="Mule or DataWeave solution editor"></textarea>
+          <div class="actions">
+            <button id="checkMule" class="button primary">Check Mule Answer</button>
+            <button id="showMule" class="button ghost">Show Solution</button>
+          </div>
+          <div id="muleResult" class="result" aria-live="polite"></div>
+        </article>
+      </section>
+
+      <section class="comparison-card">
+        <h2>Java → Mule Translation</h2>
+        <div id="comparison" class="comparison"></div>
+      </section>
+
+      <section class="runtime-card">
+        <div class="runtime-head">
+          <div>
+            <p class="eyebrow">Execution view</p>
+            <h2>What happens at runtime?</h2>
+          </div>
+          <button id="completeLesson" class="button complete">Mark Lesson Complete</button>
+        </div>
+        <div id="runtimeFlow" class="runtime-flow"></div>
+      </section>
+
+      <div class="lesson-footer">
+        <button id="prevLesson" class="button secondary">← Previous</button>
+        <button id="nextLesson" class="button primary">Next Lesson →</button>
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer">Browser-based training simulator. Use synthetic healthcare data only. This application does not run a real JVM or Mule Runtime.</footer>
+  <script src="app.js"></script>
+</body>
+</html>
